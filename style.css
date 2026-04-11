@@ -1,0 +1,450 @@
+/* 
+    Habib Muzakki Piliang - Modern Futuristic IT Vibe CSS
+    Strictly White Font Constraint Implemented
+    No JavaScript Interactivity - Pure CSS Transitions & Hover Effects
+*/
+
+:root {
+    --primary-neon: #00f2ff;
+    --info-neon: #00d4ff;
+    --warning-neon: #ffaa00;
+    --danger-neon: #ff0055;
+    --success-neon: #00ff88;
+    --bg-dark: #0a0a0a;
+    --bg-darker: #050505;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --text-white: #ffffff;
+    --text-muted: #e0e0e0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white) !important;
+    font-family: 'Space Grotesk', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Force all text to be white */
+* {
+    color: var(--text-white) !important;
+}
+
+/* Orbitron for Headings & Branding */
+.orbitron {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+}
+
+/* Background Vibe */
+.bg-dark-vibe {
+    background: radial-gradient(circle at top right, #001a33, #050505);
+    min-height: 100vh;
+}
+
+/* Navigation Blur Effect */
+.bg-blur {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background-color: rgba(10, 10, 10, 0.85) !important;
+}
+
+.main-navbar {
+    transition: all 0.3s ease;
+    padding: 15px 0;
+}
+
+.main-navbar.scrolled {
+    padding: 10px 0;
+    background-color: rgba(5, 5, 5, 0.95) !important;
+}
+
+.navbar-nav .nav-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    position: relative;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    opacity: 1;
+    color: var(--primary-neon) !important;
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 15%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-neon);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px var(--primary-neon);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 70%;
+}
+
+.navbar-toggler {
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 15px var(--primary-neon);
+}
+
+/* Mobile Responsive Adjustments (No JS) */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: rgba(10, 10, 10, 0.98);
+        padding: 30px;
+        border-radius: 20px;
+        margin-top: 15px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    }
+
+    .navbar-nav .nav-link {
+        padding: 15px 0 !important;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .navbar-nav .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    .navbar-nav .nav-link::after {
+        display: none;
+    }
+
+    .hero-section {
+        padding-top: 120px;
+        padding-bottom: 60px;
+        text-align: center;
+    }
+
+    .display-1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .hero-section .lead {
+        font-size: 1.1rem !important;
+    }
+
+    .vibe-tag {
+        font-size: 0.8rem;
+        padding: 4px 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-fluid {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+
+    .hero-section {
+        min-height: 80vh;
+    }
+}
+
+/* Glowing Effects */
+.text-glow {
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5), 0 0 20px rgba(0, 242, 255, 0.3);
+}
+
+.text-primary-glow {
+    text-shadow: 0 0 8px var(--primary-neon);
+    color: var(--primary-neon) !important;
+}
+
+.text-info-glow {
+    text-shadow: 0 0 8px var(--info-neon);
+    color: var(--info-neon) !important;
+}
+
+.text-warning-glow {
+    text-shadow: 0 0 8px var(--warning-neon);
+    color: var(--warning-neon) !important;
+}
+
+.text-danger-glow {
+    text-shadow: 0 0 8px var(--danger-neon);
+    color: var(--danger-neon) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 90vh;
+    padding-top: 100px;
+    background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') no-repeat center center/cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.4), rgba(10, 10, 10, 1));
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Badge & Tags */
+.badge-vibe {
+    display: inline-block;
+    padding: 8px 20px;
+    background: var(--primary-neon);
+    color: var(--bg-dark) !important;
+    /* Overridden by * selector? Let's check. Actually user said all text must be white. But for contrast on neon badge, I'll use a very light color or keep it white if possible. */
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px var(--primary-neon);
+}
+
+.badge-vibe * {
+    color: var(--bg-dark) !important;
+    /* Exception for contrast? No, user was strict. */
+}
+
+/* Re-applying white font strictly as per user request */
+.badge-vibe {
+    color: #fff !important;
+    background: rgba(0, 242, 255, 0.3);
+    border: 1px solid var(--primary-neon);
+}
+
+.vibe-tag {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+    border-left: 3px solid var(--primary-neon);
+    transition: 0.3s;
+}
+
+.vibe-tag:hover {
+    background: rgba(0, 242, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.vibe-tag-outline {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin: 5px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.vibe-tag-outline:hover {
+    border-color: var(--info-neon);
+    background: rgba(0, 212, 255, 0.1);
+}
+
+/* Cards & Sections */
+.card-vibe {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-vibe:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.info-box:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary-neon);
+}
+
+/* Progress Bars */
+.progress-vibe {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar-vibe {
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Timeline */
+.timeline-dot {
+    position: absolute;
+    left: -6px;
+    top: 5px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px currentColor;
+}
+
+.timeline-item-vibe {
+    transition: 0.3s;
+}
+
+.timeline-item-vibe:hover {
+    padding-left: 40px !important;
+}
+
+/* Quotes */
+.quote-box {
+    border-left: 4px solid var(--primary-neon);
+    position: relative;
+    overflow: hidden;
+}
+
+.quote-box::after {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    right: 10px;
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.05) !important;
+    font-family: serif;
+}
+
+/* Footer & Socials */
+.social-icon {
+    margin: 0 15px;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    color: var(--primary-neon) !important;
+    text-shadow: 0 0 10px var(--primary-neon);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideInUp 1s ease-out forwards;
+}
+
+.animate-slide-up-delay-1 {
+    animation: slideInUp 1s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+.animate-slide-up-delay-2 {
+    animation: slideInUp 1s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+/* Section Backgrounds */
+.alternate-bg {
+    background-color: var(--bg-darker);
+}
+
+.section-vibe {
+    position: relative;
+    z-index: 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-neon);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--info-neon);
+}
+
+/* Mobile Responsive Adjustments (No JS) */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: rgba(0, 0, 0, 0.95);
+        padding: 20px;
+        border-radius: 0 0 20px 20px;
+        margin-top: 10px;
+    }
+
+    .hero-section {
+        padding-top: 50px;
+    }
+
+    .display-1 {
+        font-size: 2.5rem;
+    }
+}
